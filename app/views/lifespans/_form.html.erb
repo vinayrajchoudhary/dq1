@@ -1,0 +1,29 @@
+<%= form_for(@lifespan) do |f| %>
+
+
+  <% if @lifespan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lifespan.errors.count, "error") %> prohibited this lifespan from being saved:</h2>
+
+      <ul>
+      <% @lifespan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+<div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  
+<div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  
+<%= f.submit "sign-in" %>
+  </div>
+<% end %>

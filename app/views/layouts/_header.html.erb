@@ -1,0 +1,11 @@
+<div id="header" class="round"> <%= image_tag("logo.png", :alt => "DaQuest", :class => "round") %> <ul class="navigation round">
+<li><%= link_to "Home", '/' %></li>
+ <li><%= link_to "Help", '/contact' %></li>
+ <li> <% if current_user %>
+        <%= link_to "Sign-out", :signout%>
+        <% else %>
+        <%= link_to "Sign-in", :signin %>
+        <% end %></li>
+</ul> </div>
+
+       

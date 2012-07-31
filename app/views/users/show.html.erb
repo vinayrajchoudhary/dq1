@@ -1,0 +1,17 @@
+<table class="profile">
+<tr>
+<td class="main">
+
+
+<% unless @user.posts.empty? %>
+<table class="posts">
+<%= render :template => 'posts/index' %>
+</table>
+<% end %>
+</td>
+<td class="sidebar round">
+<strong>Name</strong> <%= h @user.name %><br />
+<strong>posts</strong> <%= @user.posts.count %>
+</td>
+</tr>
+</table>

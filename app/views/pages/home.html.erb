@@ -1,0 +1,14 @@
+
+<h1>You're here</h1> <p>
+Willing to change your life
+</p>
+<%= form_tag(:action =>"home") do %>
+  <%= label_tag(:q, "=>") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("get it") %>
+<% end %>
+<%=raw@content%>
+<% if !current_user %>
+<%= link_to "Sign up now!", 'signup', :class => "signup_button round" %>
+<% end %>
+
