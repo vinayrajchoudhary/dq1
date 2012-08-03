@@ -16,7 +16,14 @@ class PagesController < ApplicationController
 		mw = MediaWiki::Gateway.new			('http://en.wikipedia.org/w/api.php')
 		wiki = WikiCloth::Parser.new({:data => mw.get(params[:q])}) 
 		@content=wiki.to_html 
+
 	end
+if params[:c] 
+		require 'rubygems'
+		require 'calc'
+		@output = Calc.evaluate(params[:c]) 
+	end
+
 end
 
 
@@ -24,3 +31,4 @@ end
   @title = "contact"
   end
 end
+

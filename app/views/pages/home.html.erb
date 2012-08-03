@@ -8,7 +8,16 @@ Willing to change your life
   <%= submit_tag("get it") %>
 <% end %>
 <%=raw@content%>
+
+<%= form_tag(:action =>"home") do %>
+  <%= label_tag(:c, "=>") %>
+  <%= text_field_tag(:c) %>
+  <%= submit_tag("calculate") %>
+<% end %>
+<%=@output%>
+
 <% if !current_user %>
 <%= link_to "Sign up now!", 'signup', :class => "signup_button round" %>
 <% end %>
+
 

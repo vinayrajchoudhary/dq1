@@ -7,6 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 gem 'authlogic'
+gem 'calc'
 gem 'will_paginate'
 gem 'json'
 gem 'mediawiki-gateway'
