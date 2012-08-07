@@ -23,7 +23,6 @@ if params[:c]
 		require 'calc'
 		@output = Calc.evaluate(params[:c]) 
 	end
-
 end
 
 
@@ -31,4 +30,3 @@ end
   @title = "contact"
   end
 end
-

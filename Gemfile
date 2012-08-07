@@ -1,24 +1,22 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
-gem 'therubyracer'
-gem 'execjs'
-gem 'authlogic'
 gem 'calc'
+gem 'authlogic'
 gem 'will_paginate'
 gem 'json'
+gem 'pg'
 gem 'mediawiki-gateway'
 gem 'wikipedia-client'
 gem 'nokogiri'
 gem 'mediacloth'
 gem 'wikicloth'
 gem 'openurl'
-gem 'tinymce-rails'
+gem 'google_visualr'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

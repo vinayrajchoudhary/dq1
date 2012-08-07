@@ -11,26 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+    
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
- <%= tinymce_assets %> <%= tinymce %>   
-<%= f.text_area :content, :rows => 40, :cols => 180 %>
+ 
+<%= f.text_area :content %>
 
-<script type="text/javascript">
-  tinyMCE.init({
-    mode: 'textareas',
-    theme: 'simple'
-  });
-</script>
-<>
+
 </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,27 +1,21 @@
-<h1>Listing posts</h1>
+<h3>Profile</h3>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
+<% @posts.each do |p| %>
+  
+  <b><%= p.name %></b>
+  </br>
+<div class ="post">
+   <%= p.title %>: 
+   <%= p.content %></br>
+</div>
+    <%= link_to 'T', edit_post_path(p) %>      
+    <%= link_to 'X', p, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+  </br>
+  </br>
 <% end %>
-</table>
 
 <br />
+<br />
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to "What's up", new_post_path %>

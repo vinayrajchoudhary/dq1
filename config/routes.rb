@@ -7,7 +7,8 @@ Blog::Application.routes.draw do
   match '/search' => 'pages#search'
 #get "users/new"
   
-  resources :users, :user_sessions
+  resources :users, :only => [ :show]
+  resources :user_sessions, :only => [ :create]
   match 'signin' => 'user_sessions#new', :as => :signin
   match 'signout' => 'user_sessions#destroy', :as => :signout
   match '/signup' => 'users#new'  
@@ -21,7 +22,7 @@ Blog::Application.routes.draw do
   resources :microposts
 
   resources :lifespans 
-  resources :posts
+  resources :posts, :except => [ :index, :show]
  
     # get "home/index"
 
