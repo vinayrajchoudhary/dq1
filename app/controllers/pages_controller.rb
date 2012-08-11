@@ -14,8 +14,10 @@ class PagesController < ApplicationController
 		require 'wikicloth'
 		require 'media_wiki'
 		mw = MediaWiki::Gateway.new			('http://en.wikipedia.org/w/api.php')
-		wiki = WikiCloth::Parser.new({:data => mw.get(params[:q])}) 
-		@content=wiki.to_html 
+	#	wiki = WikiCloth::Parser.new({:data => mw.get(params[:q])})
+wiki =  mw.render(params[:q]) 
+    
+		@content=wiki 
 
 	end
 if params[:c] 
