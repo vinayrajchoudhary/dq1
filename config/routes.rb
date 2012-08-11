@@ -7,7 +7,7 @@ Blog::Application.routes.draw do
   match '/search' => 'pages#search'
 #get "users/new"
   
-  resources :users, :only => [ :show]
+  resources :users
   resources :user_sessions, :only => [ :create]
   match 'signin' => 'user_sessions#new', :as => :signin
   match 'signout' => 'user_sessions#destroy', :as => :signout
