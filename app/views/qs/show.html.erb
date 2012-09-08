@@ -1,0 +1,31 @@
+ <b>Title:</b>
+    <%= @q.title %>
+  </p>
+ 
+Started on: <%= @q.created_at%>
+<h2>Qmails</h2>
+<% @q.qmails.each do |qmail| %>
+
+<div class ="post">
+  <b><%= qmail.user.name%>:</b>
+   <%= qmail.content %>
+     <%= link_to 'X', p, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+
+ </div>
+ </br>
+
+ <% end %>
+  <h2>Say Something:</h2>
+<%= form_for([@q, @q.qmails.build]) do |f| %>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+ 
+
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

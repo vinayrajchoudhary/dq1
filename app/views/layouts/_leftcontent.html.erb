@@ -1,0 +1,22 @@
+<div id = "leftcontent">
+<%if current_user%>
+
+<button class="button"  onclick = "window.location.href = <%=users_path%>" >  
+
+New Quest</button>
+
+</br>
+
+<font color="#ff0000" size="3.5">
+<% current_user.quests.each do |quest| %>
+ 
+<a href = <%= '/users/'+current_user.id.to_s()+'/quests/'+quest.id.to_s()%>>
+	  <%= quest.title %>
+ </a>
+ </br>
+
+ <% end %>
+
+<%end%>
+</font>
+</div>

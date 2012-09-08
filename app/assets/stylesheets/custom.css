@@ -1,51 +1,131 @@
 ﻿.container {
-width: 1310px;
+margin-bottom: 0px; margin-top: 0px;
 }
-body { background: #fff;
+body { background: #fff; margin: 0px; padding: 0px;
 }
-#header { padding-top: 0px; width: 1310px; float: right;
+#header { height: 40px ;background-color: #F5F5DC;border-top:0px;
+} 
+#header img { padding-right: 5px; background: #F5F5DC; float: left; 
 }
-#header img { padding-top: 0px; background: #fff; float: left;
+#content img{float: right; 
 }
-#content { margin-left: 1em; margin-top: 1em; font-size: 120%; padding: 5px; min-height: 35em; background: #ddd; width: 630px; float: left;
+#content { background: #fff; width: 600px; padding: 1em;  float: left;
 }
-#sidebar { font-size: 120%; background: #ddd; width: 630px; float: right;
-	margin-right: 1em; margin-top: 1em;
-	padding: 5px 0 0 5px; min-height: 35em;
-}
+
 div.post { font-size: 120%; padding: 5px; background: #cef; 
 }
-/* Links */
-a{ color: #09c; text-decoration: none;
+div.users { float: left; width: 850px;
 }
-a:hover { color: #069; text-decoration: underline;
+
+/* Links */
+a{color: #09c; text-decoration: none;
+}
+a:hover {color: #069; text-decoration: underline;
 }
 a:visited { color: #069;
 }
-.navigation { float: right;
+.navigation { background-color: #F5F5DC; white-space: nowrap;
 }
-.navigation { background-color: white; padding: 0 0.7em; white-space: nowrap;
-}
-ul.navigation { margin: 0;}
-.navigation li { list-style-type: none; display: inline-block; padding: 0.2em 0;
+ul.navigation { float: right;}
+.navigation li { list-style-type: none; display: inline-block; 
 }
 .navigation li a { padding: 0 5px; font-weight: bold;
 }
-.navigation li a:visited { color: #09c;
+.navigation li a:visited { color: #99B299;
 }
 .navigation li a:hover { text-decoration: underline;
 }
+
+/*navigation for footer*/
+.navigationf { background-color: #FFFFFF; white-space: nowrap;
+}
+ul.navigationf { float: right;}
+.navigationf li { list-style-type: none; display: inline-block; 
+}
+.navigationf li a { padding: 0 5px; font-weight: bold;
+}
+.navigationf li a:visited { color: #99B299;
+}
+.navigationf li a:hover { text-decoration: underline;
+}
 a.signup_button { margin-left: auto; margin-right: auto; display: block; text-align: center; width: 150px;
-color: #fff; background: #09c; font-size: 150%; font-weight: bold; padding: 10px; opacity: 0.6;
+color: #fff; background: #09c; font-size: 150%; font-weight: bold; padding: 10px; 
 }
 .round {
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
-￼border-radius: 10px; }
+border-radius: 10px; }
 #footer {
-text-align: right; margin-top: 7px; width: 1310px; margin-left: aerrorExplanation ul li {
-font-size: 12px;
-list-style: square; 
+color: #99B299;
+float: right;
+width: 1200px;
 }
 
+
+#leftcontent {
+float: left;
+width: 200px;
+min-height: 300px;
+padding: 20px;
+}
+
+
+#rightcontent{
+float: right;
+width: 300px;
+min-height: 400px;
+padding-right: 20px;
+}
+#rightcontent img{
+	padding:3px;
+
+}
+
+#dialog-form{background-color: #F5F5DC}
+.button {
+	margin:0px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ff5100;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ff5100;
+	box-shadow:inset 0px 1px 0px 0px #ff5100;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa3a00), color-stop(1, #fa4300) );
+	background:-moz-linear-gradient( center top, #fa3a00 5%, #fa4300 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa3a00', endColorstr='#fa4300');
+	background-color:#fa3a00;
+	border:1px solid #ff5100;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 14px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #b06034;
+}.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fa4300), color-stop(1, #fa3a00) );
+	background:-moz-linear-gradient( center top, #fa4300 5%, #fa3a00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa4300', endColorstr='#fa3a00');
+	background-color:#fa4300;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+.button1 {
+	margin:0px;
+	height:30px;
+	width:30px;
+	background-color:#ffffff;
+	border:0px solid #ff5100;
+	display:inline-block;
+	color:#00ff00;
+	font-family:arial;
+	font-size:25px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #b06034;
+}.button1:hover {
+	
+		color:#ffaaaa;
+}.button1:active {
+	position:relative;
+	top:1px;
 }

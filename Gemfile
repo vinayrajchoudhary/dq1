@@ -5,7 +5,7 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 group :production do
   gem 'pg'
@@ -14,7 +14,10 @@ gem 'calc'
 gem 'authlogic'
 gem 'will_paginate'
 gem 'json'
+gem 'gravatar-ultimate'
+gem 'has_mailbox'
 gem 'pg'
+gem 'jquery-rails'
 gem 'mediawiki-gateway'
 gem 'wikipedia-client'
 gem 'nokogiri'
@@ -22,12 +25,13 @@ gem 'mediacloth'
 gem 'wikicloth'
 gem 'openurl'
 gem 'google_visualr'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+   gem 'jquery-ui-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

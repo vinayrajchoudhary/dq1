@@ -1,0 +1,6 @@
+[<% for user in @users -%>
+"<%= user.name %>"
+<%if user==@users.last%>
+<%else%>
+,<%end%>
+<% end -%>]

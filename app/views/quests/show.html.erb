@@ -1,0 +1,33 @@
+ 
+  <h2 style="font-family:times;"><%= @quest.title %></h2>
+  
+ 
+  <p>
+
+    <%= @quest.description %>
+  </p>
+
+
+<h2>q's</h2>
+<% @quest.qs.each do |q| %>
+
+<div class ="post">
+ <li><a href = <%= '/quests/'+@quest.id.to_s()+'/qs/'+q.id.to_s()%>>  
+   <%= q.title %>:</a></li> 
+ </div>
+ </br>
+<hr class = "line">
+</hr>
+ <% end %>
+  <h2>Add a q:</h2>
+<%= form_for([@quest, @quest.qs.build]) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

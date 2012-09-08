@@ -9,6 +9,7 @@ helper_method :current_user
     @current_user_session = UserSession.find
   end
   
+  
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
@@ -28,22 +29,5 @@ helper_method :current_user
         return false
       end
     end
-   def home
- @title = params[:q]
-  if params[:q] 
-    require 'rubygems'
-    require 'wikicloth'
-    require 'media_wiki'
-    mw = MediaWiki::Gateway.new     ('http://en.wikipedia.org/w/api.php')
-    wiki = WikiCloth::Parser.new({:data => mw.get(params[:q])}) 
-    @content=wiki.to_html 
-
-  end
-if params[:c] 
-    require 'rubygems'
-    require 'calc'
-    @output = Calc.evaluate(params[:c]) 
-  end
-end
-
+  
 end

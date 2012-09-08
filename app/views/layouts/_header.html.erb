@@ -1,6 +1,7 @@
-<div id="header" class="round"> <a href="/"><%= image_tag("logo.png", :alt => "DaQuest", :class => "round") %></a> <ul class="navigation round">
+<div id="header" ><a href="/"><%= image_tag("logo.png", :alt => "DaQuest", :height => "40px") %></a> <ul class="navigation ">
  <li> <% if current_user %>
-        <b><%= current_user.name %></b>
+  		<a href = <%= "/users/"+current_user.id.to_s() %>><%= image_tag(Gravatar.new(current_user.email).image_url, :size => "30x30") %><a>
+        <a href = '/mailboxes'><b><%= current_user.name %></b><a>
         <%= link_to "Sign-out", :signout%>
         <% else %>
         <%= link_to "Sign-in", :signin %>

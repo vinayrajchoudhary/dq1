@@ -1,0 +1,91 @@
+<div id = "rightcontent">
+
+<%if current_user%>
+<%if params[:id]%>
+<%quest=Quest.find(params[:id])%>
+<%if quest%>
+Quesers in this Quest:
+</br>
+<table>
+
+<% quest.users.each do |user| %>
+
+<tr><%= link_to h(image_tag(Gravatar.new(user.email).image_url, :size => "30x30",:align=>"left")), user %></tr>
+
+
+<%end%>
+<tr>
+<button class="button1" id="Add" >  
+
++</button>
+
+</tr>
+</table>
+<%end%>
+<div id="dialog-form">
+<%= form_tag(:controller=> "quests",:action => "show") do %>
+  <%= label_tag(:add_user) %>
+  <%= text_field_tag :add_user %>
+  <%= submit_tag("Add") %>
+<% end %>
+</div>
+<hr>
+<%end%>
+
+<%end%>
+<%= image_tag("wiki.png", :alt => "Wikipedia") %>
+
+<form accept-charset="UTF-8" method="get">
+  <label for="q"></label>
+  <input id="q" name="q" type="text" />
+  <input name="commit" type="submit" value="Search" />
+</form>
+<%@content = wiki_content%>
+<%=raw@content%>
+</div>
+
+	
+	
+	<script>
+	$(function() {
+		
+		//autocomplete for user names
+		var availableTags = [<% for user in User.all -%>
+		"<%= user.name %>"
+		<%if user==User.last%>
+		<%else%>
+		,<%end%>
+		<% end -%>];
+		$( "#add_user" ).autocomplete({
+			source: availableTags
+			});
+		
+		
+		//dialog box for adding user
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+		
+		var name = $( "#name" );
+
+		$( "#dialog-form" ).dialog({
+			autoOpen: false,
+			height: 100,
+			width: 200,
+			position: "right",
+			modal: true,
+			buttons: {
+				
+			},
+			close: function() {
+				
+			}
+		});
+
+		$( "#Add" )
+			.button()
+			.click(function() {
+				$( "#dialog-form" ).dialog( "open");
+			});
+	});
+	</script>
+
+

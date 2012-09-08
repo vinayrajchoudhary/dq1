@@ -5,11 +5,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
-
+    @users = User.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+      format.xml  { render :xml => @users }
+      format.js # index.js.erb
     end
   end
 
@@ -47,7 +48,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to :users, notice: 'User was successfully created.' }
+        UserMailer.welcome_email(@user).deliver
+        format.html { redirect_to "/", notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

@@ -8,21 +8,25 @@
  <head>
 <title><%= title %></title>
 <%= render 'layouts/stylesheets' %> </head>
-<body>
+<body >
 
 <div class="container">
 
 <% flash.each do |key, value| %>
 <%= content_tag(:div, value, :class => "flash #{key}") %>
 <% end %>
-<%= render 'layouts/header' %> <div id="content" class="round">
+</div>
+<%= render 'layouts/header' %> 
+<%= render 'layouts/leftcontent'%>
+
+<div id="content" >
 <%= yield %>
 </div>
-<div id="sidebar" class="round">
-</div>
-<%= render 'layouts/footer' %> </div>
+<%= render 'layouts/rightcontent'%>
 
-  
+</br>
+<hr width = "1100px" color = "#99B299" size = "1px">
+<%= render 'layouts/footer' %> 
 </body>
 </html>
 

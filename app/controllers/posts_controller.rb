@@ -5,10 +5,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-  
+   @post = Post.new
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @posts }
+     
+      format.json { render :json => {:posts =>@posts ,:post =>@post} }
     end
   end
 
@@ -20,6 +21,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @post }
+     
     end
   end
 
@@ -45,10 +47,10 @@ class PostsController < ApplicationController
  @post.name = current_user.name
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, :notice => 'Post was successfully created.' }
+        format.html { redirect_to :back, :notice => 'Post was successfully created.' }
         format.json { render :json => @post, :status => :created, :location => @post }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "index" }
         format.json { render :json => @post.errors, :status => :unprocessable_entity }
       end
     end

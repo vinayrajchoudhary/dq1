@@ -1,13 +1,16 @@
-<table class="profile">
-<tr>
-<td class="main">
 
-
-<% unless @user.posts.empty? %>
-<table class="posts">
-<%= render :template => 'posts/index' %>
-</table>
+ <h2>Add a Quest:</h2>
+<%= form_for([@user, @user.quests.build]) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
 <% end %>
-</td>
-</tr>
-</table>

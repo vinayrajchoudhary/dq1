@@ -1,5 +1,24 @@
 <h1>Listing users</h1>
+<script>
+	$(function() {
+				var availableTags = [<% for user in @users -%>
+"<%= user.name %>"
+<%if user==@users.last%>
+<%else%>
+,<%end%>
+<% end -%>];
+		$( "#search" ).autocomplete({
+			source: availableTags
+		});
+	});
+	</script>
 
+
+<%= form_tag({ :action => "index"}, :method => "get") do %>
+  <%= label_tag(:search, "search") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Find", :name => nil) %>
+<% end %>
 <table>
   <tr>
     <th>Name</th>

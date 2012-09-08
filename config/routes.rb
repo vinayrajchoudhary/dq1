@@ -1,28 +1,39 @@
 Blog::Application.routes.draw do 
 
  
+
     #get "pages/home"
   match '' => 'pages#home'
     #get "pages/search"
   match '/search' => 'pages#search'
 #get "users/new"
+  match 'users/:id/quests/:id' => 'quests#show', :via => [:get, :post]
+ 
+  resources :users do
+    resources :quests
   
-  resources :users
+  end
+    resources :quests do
+      resources :qs
+    end
+   resources :qs do
+      resources :qmails
+    end
   resources :user_sessions, :only => [ :create]
   match 'signin' => 'user_sessions#new', :as => :signin
   match 'signout' => 'user_sessions#destroy', :as => :signout
   match '/signup' => 'users#new'  
 #get "pages/about"
     match '/about' => 'pages#about'
-
-
+   match '/google885d2aab83a9c566' => 'pages#google885d2aab83a9c566'
+   mailboxes_for :users
     # get "pages/contact"
     match '/contact' => 'pages#contact'
-
+ 
   resources :microposts
-
+  resources :involvements
   resources :lifespans 
-  resources :posts, :except => [ :index, :show]
+  resources :posts
  
     # get "home/index"
 
