@@ -133,7 +133,7 @@ GEM
       builder
       expression_parser
     wikipedia-client (1.0.0)
-    will_paginate (3.0.3)
+    will_paginate (3.0.5)
 
 PLATFORMS
   ruby
