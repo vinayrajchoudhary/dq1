@@ -71,15 +71,20 @@ GEM
       activesupport
       rest-client (>= 1.3.0)
     mime-types (1.18)
+    mini_portile2 (2.6.1)
     multi_json (1.3.6)
-    nokogiri (1.5.5)
-    nokogiri (1.5.5-x86-mingw32)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86-mingw32)
+      racc (~> 1.4)
     openurl (0.4.2)
       ensure_valid_encoding
       marc
     pg (0.14.0)
     pg (0.14.0-x86-mingw32)
     polyglot (0.3.3)
+    racc (1.5.2)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
